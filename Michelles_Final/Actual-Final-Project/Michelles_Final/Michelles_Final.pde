@@ -1,7 +1,5 @@
-//import processing.sound.*;
-//SoundFile s;
-
-
+import processing.sound.*;
+SoundFile s;
 //keeps pace with poem
 int tracker =0;
 FadingLine title;
@@ -89,78 +87,88 @@ void setup(){
    //background(0);
    //play poem
      
-     //title display info
-   title = new FadingLine(400, 350,"Bluebird by Charles Bukowski", 80);
+   title = new FadingLine(400, 350,"Bluebird by Charles Bukowski");
     bluebird = new Poem();
-    
-    //setting up and loading the images
-     bird = loadImage("flyingblue.png");
+    //setting up the images
+         bird = loadImage("flyingblue.png");
      moveBird = createImage(200,200,ARGB);
-     opencage = loadImage("opencage.png");
+     
+      opencage = loadImage("opencage.png");
      cage = createImage(500,500,ARGB);
-     hand = loadImage("hand.png");
+     
+       hand = loadImage("hand.png");
      moveHand = createImage(536,500,ARGB);
-     manPic = loadImage("man.png");
+     
+        manPic = loadImage("man.png");
      man = createImage(823,853,ARGB);
-     coatPic = loadImage("coat.png");
-     coat = createImage(823,853,ARGB);
-     sleepPic = loadImage("sleepTogether.png");
-     sleep = createImage(571,569,ARGB); 
-     nopePic = loadImage("don't.png");
-     nope = createImage(571,569,ARGB);
-     weepPic = loadImage("weep.png");
-     weep = createImage(571,569,ARGB);
-     barPic = loadImage("barscene.png");
-     bar = createImage(1584,689,ARGB);
-     shoutPic = loadImage("shouting.png");
-     shout = createImage(732,512,ARGB);
-     questPic = loadImage("doyou.png");
-     quest = createImage(571,569,ARGB);
-     angryPic = loadImage("bedroomangry.png");
-     angry = createImage(1211,731,ARGB);
-     happyPic = loadImage("bedroomhappy.png");
-     happy = createImage(1211,731,ARGB);
-     putPic = loadImage("putback.png");
-     put = createImage(1211,731,ARGB);
-     singPic = loadImage("singing.png");
-     sing = createImage(745,622,ARGB);
+     
+         coatPic = loadImage("coat.png");
+       coat = createImage(823,853,ARGB);
+       
+       sleepPic = loadImage("sleepTogether.png");
+       sleep = createImage(571,569,ARGB);
+       
+          nopePic = loadImage("don't.png");
+       nope = createImage(571,569,ARGB);
+       
+          weepPic = loadImage("weep.png");
+       weep = createImage(571,569,ARGB);
+       
+         barPic = loadImage("barscene.png");
+       bar = createImage(1584,689,ARGB);
+       
+       shoutPic = loadImage("shouting.png");
+       shout = createImage(732,512,ARGB);
+       
+       questPic = loadImage("doyou.png");
+       quest = createImage(571,569,ARGB);
+       
+       angryPic = loadImage("bedroomangry.png");
+       angry = createImage(1211,731,ARGB);
+       
+          happyPic = loadImage("bedroomhappy.png");
+       happy = createImage(1211,731,ARGB);
+       
+          putPic = loadImage("putback.png");
+       put = createImage(1211,731,ARGB);
+       
+       singPic = loadImage("singing.png");
+       sing = createImage(745,622,ARGB);
     
    //setting up the pages
-    page1 = new Page(bluebird.getLine(0),bluebird.getLine(1),350,50,650,80,35);
-    page2 = new Page(bluebird.getLine(2),bluebird.getLine(3),100,50,160,80,10);
-    page3 = new Page(bluebird.getLine(4),bluebird.getLine(5),00,30,0,30,45);
-    page4 = new Page(bluebird.getLine(6),bluebird.getLine(7),0,30,0,60,27);
-    page5 = new Page(bluebird.getLine(8),bluebird.getLine(9),0,90,0,120,12);
+    page1 = new Page(bluebird.getLine(0),bluebird.getLine(1),350,50,650,70,35);
+    page2 = new Page(bluebird.getLine(2),bluebird.getLine(3),200,50,60,80,10);
+    page3 = new Page(bluebird.getLine(4),bluebird.getLine(5),0,210,0,35,20);
+    page4 = new Page(bluebird.getLine(6),bluebird.getLine(7),0,50,0,80,27);
+    page5 = new Page(bluebird.getLine(8),bluebird.getLine(9),0,110,0,50,12);
     page6 = new Page(bluebird.getLine(10),bluebird.getLine(11),600,50,600,100,10);
     page7 = new Page(bluebird.getLine(12),bluebird.getLine(13),500,150,500,200,10);
     page8 = new Page(bluebird.getLine(14),bluebird.getLine(15),400,250,350,300,12);
-    page9 = new Page(bluebird.getLine(16),bluebird.getLine(17),500,420,500,460,8);
-    page10 = new Page(bluebird.getLine(18),bluebird.getLine(19),0,50,50,90,10);
+    page9 = new Page(bluebird.getLine(16),bluebird.getLine(17),0,50,500,500,8);
+    page10 = new Page(bluebird.getLine(18),bluebird.getLine(19),0,80,600,530,0);
     page11 = new Page(bluebird.getLine(20),bluebird.getLine(21),480,400,500,450,0);
-    page12 = new Page(bluebird.getLine(22),bluebird.getLine(23),0,50,0,90,15);
+    page12 = new Page(bluebird.getLine(22),bluebird.getLine(23),0,50,0,90,0);
     page13 = new Page(bluebird.getLine(24),bluebird.getLine(25),0,50,600,60,0);
-    page14 = new Page(bluebird.getLine(26),bluebird.getLine(27),0,50,50,90,10);
-    last = new FadingLine(480,50, bluebird.getLine(28),40);
-     frameRate(15); 
-     
-     //s = new SoundFile(this, "bluebird.mp3");
-    //s.play(); 
+    page14 = new Page(bluebird.getLine(26),bluebird.getLine(27),0,50,50,70,10);
+     last = new FadingLine(490,50, bluebird.getLine(28));
+    tracker++;
+     frameRate(10); 
+     s = new SoundFile(this, "bluebird.mp3");
+    s.play(); 
+    
+
 }
 
 void draw(){
-  //opening scene
   background(0);
   cage(300,350);
-  tracker++;
-  
-  
-      // show title
+     tracker++;
+  if(tracker<110){
        title.display(); 
        title.update();
- 
-   //start of poem 
-   // bird trying to escape
-   if(tracker>50){
+  }
+ // if(please==1){
+  if(tracker>110){
     page1.display();
     bird(moveX, moveY);
     cage(300,350);
@@ -180,23 +188,20 @@ void draw(){
     popMatrix();
    
   }
-  //man with hand over cage
-     if(tracker>110){
+     if(tracker>170){
        //secondPage();
        background(0);
        firstMan(500,400);
        page2.display();
    }
-   //man putting on coat
-   if(tracker>175){
+   if(tracker>200){
      background(0);
      page3.display();
      coated(500,400);
      //thirdPage();
    }
-   
-   //panning out bar scene from 4th to 5th page
-   if(tracker>235){
+   if(tracker>240){
+     
      //fourthPage();
      pushMatrix();
           background(0);
@@ -217,22 +222,22 @@ void draw(){
        }
    }
    
-   if(tracker>310){
+   if(tracker>325){
     background(0);
     shouting(500,350);
      page6.display();
-     if(tracker>330){
+     if(tracker>335){
      page7.display();
      //seventhPage();
    }
-  if(tracker>360){
+   if(tracker>355){
      page8.display();
      //eighthPage();
    }
    
-   } 
+   }
    
-   if(tracker>395){
+   if(tracker>385){
      background(0);
      
      page9.display();
@@ -243,39 +248,39 @@ void draw(){
            
            page10.display();
            
-           if(tracker>440){
+           
+           if(tracker>417){
              background(0);
              page11.display();
              room3(500,350);
            }
          
-        }
-   }
+     }
 
-   if(tracker>470){
+   if(tracker>430){
      background(0);
      page12.display();
      singing(500,350);
      //twelthPage();
    }
-   if(tracker>530){
+   if(tracker>445){
       background(0);
       page13.display();
      sleeping(500,350);
      
      //thirteenthPage();
    }
-   if(tracker>580){
+   if(tracker>460){
       background(0);
      weeping(500,350);
-       if(tracker>598){
+       if(tracker>469){
          background(0);
          not(500,350);
        }
      page14.display();
      //fourteenthPage();
    } 
-      if(tracker>630){
+      if(tracker>470){
         background(0);
           end(500,350);
           last.display();
@@ -283,16 +288,17 @@ void draw(){
            
      //fourteenthPage();
    } 
-   if(tracker>670){
+   if(tracker>550){
      background(0);
    }
    }
- 
- 
 
+}
+//}
 
 //created image methods
-void shouting(int xHap,int yHap){ // 
+
+void shouting(int xHap,int yHap){
        shoutPic.loadPixels();
        shout.loadPixels();
    for(int y=0;y<shoutPic.height; y++){

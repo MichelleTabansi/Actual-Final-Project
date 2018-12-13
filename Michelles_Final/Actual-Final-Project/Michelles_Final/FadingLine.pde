@@ -5,22 +5,12 @@ class FadingLine{
   String line;
   int fade=0;
   int tracker =0;
-  int s;
- /* FadingLine(int xCor, int yCor, String poemLine){
+  FadingLine(int xCor, int yCor, String poemLine){
     x = xCor;
     y = yCor;
     line = poemLine;
     help = createFont("ITCBLKAD.TTF",100);
     textFont(help,40);
-  }*/
-  
-    FadingLine(int xCor, int yCor, String poemLine, int size){
-    x = xCor;
-    y = yCor;
-    line = poemLine;
-    help = createFont("ITCBLKAD.TTF",200);
-    s = size;
-    textFont(help,size);
   }
   
     void display(){
